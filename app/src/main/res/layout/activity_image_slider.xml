@@ -10,12 +10,14 @@
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="20dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:paddingBottom="20dp"
-        android:clipToPadding="false">
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -292,11 +294,11 @@
                 android:id="@+id/product_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
                 android:text="●Apple-designed M1 chip for a giant leap in cpu,gpu,and machine learning performance \n ●Get more done with upto 20hours of battery life,the logest ever in a mac \n ●Get more done with upto 20hours of battery life,the logest ever in a mac\n ●Get more done with upto 20hours of battery life,the logest ever in a mac\n ●Get more done with upto 20hours of battery life,the logest ever in a mac\n ●Get more done with upto 20hours of battery life,the logest ever in a mac"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:layout_marginHorizontal="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/product_mini_rating" />
 
@@ -304,29 +306,165 @@
                 android:id="@+id/customer_review"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/product_description"
-                android:text="Customer Reviews"
-                android:textSize="20sp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:textColor="@color/black"/>
+                android:text="Customer Reviews"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/product_description" />
 
 
             <RatingBar
+                android:id="@+id/customer_rating_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/customer_review"
                 android:layout_marginStart="20dp"
+                android:isIndicator="true"
                 android:numStars="5"
                 android:rating="4.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/customer_review" />
+
+
+            <View
+
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#7E7E7E"
+                app:layout_constraintBottom_toBottomOf="@+id/customer_rating_bar" />
+
+            <RatingBar
+
+                android:id="@+id/dummy_rating_bar1"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
                 android:isIndicator="true"
+                android:numStars="5"
+                android:rating="4.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/customer_rating_bar" />
+
+            <TextView
+                android:id="@+id/dummy_user1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:text="by Hossain Ahmed"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/dummy_rating_bar1"
+                app:layout_constraintTop_toBottomOf="@+id/customer_rating_bar"
+
                 />
 
+            <TextView
+                android:id="@+id/dummy_user_review_text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="I bought this on Prime day to replace an android Tablet.Wanted something a little more capable,yet portable.i installed several Linux distros without hitch.Setteled on Mint 19. "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dummy_rating_bar1" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#7E7E7E"
+                app:layout_constraintBottom_toTopOf="@+id/dummy_rating_bar2" />
 
+            <RatingBar
+
+                android:id="@+id/dummy_rating_bar2"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:rating="4.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dummy_user_review_text1" />
+
+            <TextView
+                android:id="@+id/dummy_user2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:text="by Hossain Ahmed"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/dummy_rating_bar2"
+                app:layout_constraintTop_toBottomOf="@+id/dummy_user_review_text1"
+
+                />
+
+            <TextView
+                android:id="@+id/dummy_user_review_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="I bought this on Prime day to replace an android Tablet.Wanted something a little more capable,yet portable.i installed several Linux distros without hitch.Setteled on Mint 19. "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dummy_rating_bar2" />
+
+            <TextView
+                android:id="@+id/dummy_related_products"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="RELATED PRODUCTS"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dummy_user_review_text2" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:minHeight="0dp"
+                android:text="Shop More"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.785"
+                app:layout_constraintStart_toEndOf="@id/dummy_related_products"
+                app:layout_constraintTop_toBottomOf="@id/dummy_user_review_text2" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="20dp"
+                android:id="@+id/dummy_related_products_rcv1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dummy_related_products" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="20dp"
+                android:id="@+id/dummy_related_products_rcv2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dummy_related_products_rcv1" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
@@ -338,7 +476,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/scrollView2" />
 
     <LinearLayout
-        android:visibility="visible"
+        android:visibility="gone"
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

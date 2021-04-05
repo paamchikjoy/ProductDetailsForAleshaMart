@@ -1,10 +1,14 @@
 package com.example.productdetailsforaleshamart.ImageSlider;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+
+import com.example.productdetailsforaleshamart.Adapter.ProductAdapter;
 import com.example.productdetailsforaleshamart.Adapter.SliderAdapter;
 
 import com.example.productdetailsforaleshamart.R;
@@ -22,12 +26,33 @@ public class ImageSliderActivity extends AppCompatActivity {
 
     SliderView sliderView;
     private SliderAdapter adapter;
+    RecyclerView related_product_recyclerView1,related_product_recyclerView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_slider);
+        sliderView();
+        relatedProductRCV();
 
+
+    }
+
+    public void relatedProductRCV()
+    {
+        related_product_recyclerView1=findViewById(R.id.dummy_related_products_rcv1);
+        related_product_recyclerView2=findViewById(R.id.dummy_related_products_rcv2);
+
+        related_product_recyclerView1.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        related_product_recyclerView1.setAdapter(new ProductAdapter(getApplicationContext()));
+
+        related_product_recyclerView2.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        related_product_recyclerView2.setAdapter(new ProductAdapter(getApplicationContext()));
+
+    }
+
+    public void sliderView()
+    {
         sliderView = findViewById(R.id.imageSlider);
 
 
